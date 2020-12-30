@@ -60,6 +60,9 @@ public class LambdaExpression {
 		
 		//personList.stream().sorted(Collections.so)
 		
+		//forEach with java 8 lambda expression
+		System.out.println("using forEach of collection object java 8  lambda expression ");
+		personList.forEach(p->System.out.println(p));
 	}
 
 	private static void printCondtinally(Person person, Condition condition) {
