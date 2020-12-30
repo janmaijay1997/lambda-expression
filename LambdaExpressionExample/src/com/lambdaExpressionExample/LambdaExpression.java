@@ -8,7 +8,9 @@ import java.util.List;
 public class LambdaExpression {
 	
 	public static void main(String args[]) {
+
 		
+		System.out.println("tet");
 		List<Person> personList= Arrays.asList(
 				new Person(2, "janmaijay", "Bisen"),
 				new Person(23, "parth", "bisen"),
