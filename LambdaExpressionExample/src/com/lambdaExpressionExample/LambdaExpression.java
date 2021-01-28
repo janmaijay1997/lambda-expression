@@ -1,16 +1,27 @@
 package com.lambdaExpressionExample;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class LambdaExpression {
 	
 	public static void main(String args[]) {
-
+		System.out.println("using supplier interface");
+		List<String> listString=new ArrayList<String>();
+		//supplier example 
+		Supplier<List<String>> supplier=()->{ 
+			listString.add("janmaijay");
+		listString.add("rt");
+		return listString;
+			
+		};
+		System.out.println(supplier.get());
 		
 		System.out.println("tet");
 		List<Person> personList= Arrays.asList(
@@ -62,7 +73,8 @@ public class LambdaExpression {
 		
 		//forEach with java 8 lambda expression
 		System.out.println("using forEach of collection object java 8  lambda expression ");
-		personList.forEach(p->System.out.println(p));
+		//personList.forEach(p->System.out.println(p));
+		personList.forEach(System.out::println);
 	}
 
 	private static void printCondtinally(Person person, Condition condition) {
@@ -71,10 +83,11 @@ public class LambdaExpression {
 			System.out.println(person);
 		}
 		
+		
 	}
 	
 	
-	
+	@FunctionalInterface
 	interface Condition{
 		public boolean test(Person p);
 	}
